@@ -6,6 +6,7 @@ public class Mon {
     ArrayList<Move> Moves = new ArrayList<Move>();
     String name; 
     String status = "Normal";
+    int ID;
     int hp;
     int def;
     int speed;

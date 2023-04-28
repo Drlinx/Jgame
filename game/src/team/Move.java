@@ -4,11 +4,13 @@ import java.util.Random;
 
 public class Move {
     String Name;
+    
     int damage;
     // Bounds: 0-100
     int accuracy;
     int uses;
     int type;
+
     // Defualt critical hit info
     int CD = 2;
     int CR = 1;
