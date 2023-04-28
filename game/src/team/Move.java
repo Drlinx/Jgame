@@ -3,6 +3,7 @@ import java.util.Random;
 
 
 public class Move {
+    String Name;
     int damage;
     // Bounds: 0-100
     int accuracy;
