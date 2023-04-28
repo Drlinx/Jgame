@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class Move {
     int damage;
+    // Bounds: 0-100
     int accuracy;
     int uses;
     int type;
@@ -16,11 +17,18 @@ public class Move {
     }
 
     public int Use(int Uatk, int Odef){
+
+        //Out of uses?
+        if (uses <= 0){
+            return 0;
+        }
+        uses--;
+
         Random rng = new Random();
         int x = rng.nextInt(100);
-        if(x > CR){
+        if(x < CR){
             return DmgCalc(CD, Uatk, Odef);
-        } else if (x >= accuracy){
+        } else if (x < accuracy){
             return DmgCalc(1, Uatk, Odef);
         } else {
             return 0;
@@ -36,7 +44,7 @@ public class Move {
      */
     public int DmgCalc(int C, int Uatk, int Odef){
         int x = damage * Uatk * C * 3;
-        x /= Odef;
+        x /= Odef * 2;
         return x;
     }
 }
